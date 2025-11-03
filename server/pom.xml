@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.fileretrieval</groupId>
+        <artifactId>dist-file-retrieval-engine</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>server</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Server</name>
+
+    <dependencies>
+        <!-- Depend on common module  -->
+        <dependency>
+            <groupId>com.fileretrieval</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+          <!-- Gson -->
+          <dependency>
+              <groupId>com.google.code.gson</groupId>
+              <artifactId>gson</artifactId>
+          </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugins>
+              <!-- Create executable fat JAR with all dependencies -->
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-shade-plugin</artifactId>
+                  <version>3.5.0</version>
+                  <executions>
+                      <execution>
+                          <phase>package</phase>
+                          <goals>
+                              <goal>shade</goal>
+                          </goals>
+                          <configuration>
+                              <transformers>
+                                  <transformer implementation="org.apache.maven
+  .plugins.shade.resource.ManifestResourceTransformer">
+
+  <mainClass>com.fileretrieval.server.FileRetrievalServer</mainClass>
+                                  </transformer>
+                              </transformers>
+                              <finalName>server</finalName>
+                          </configuration>
+                      </execution>
+                  </executions>
+              </plugin>
+          </plugins>
+    </build>
+</project>
