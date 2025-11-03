@@ -32,7 +32,6 @@
 
     <build>
         <plugins>
-            <plugins>
               <!-- Create executable fat JAR with all dependencies -->
               <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
