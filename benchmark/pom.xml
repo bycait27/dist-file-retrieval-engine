@@ -40,10 +40,8 @@
                           </goals>
                           <configuration>
                               <transformers>
-                                  <transformer implementation="org.apache.maven
-  .plugins.shade.resource.ManifestResourceTransformer">
-
-  <mainClass>com.fileretrieval.benchmark.FileRetrievalBenchmark</mainClass>
+                                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.fileretrieval.benchmark.FileRetrievalBenchmark</mainClass>
                                   </transformer>
                               </transformers>
                               <finalName>benchmark</finalName>

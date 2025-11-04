@@ -45,10 +45,8 @@
                           </goals>
                           <configuration>
                               <transformers>
-                                  <transformer implementation="org.apache.maven
-  .plugins.shade.resource.ManifestResourceTransformer">
-
-  <mainClass>com.fileretrieval.server.FileRetrievalServer</mainClass>
+                                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.fileretrieval.server.FileRetrievalServer</mainClass>
                                   </transformer>
                               </transformers>
                               <finalName>server</finalName>
