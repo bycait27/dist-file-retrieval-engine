@@ -103,6 +103,7 @@ public class ClientAppInterface {
                     // this extracts "folderX/..." portion
                     String[] pathSegments = pathPart.split("/");
                     int folderIndex = -1;
+
                     for (int i = 0; i < pathSegments.length; i++) {
                         if (pathSegments[i].startsWith("folder")) {
                             folderIndex = i;
@@ -112,6 +113,7 @@ public class ClientAppInterface {
 
                     // build relative path from folder onwards
                     String relativePath;
+                    
                     if (folderIndex != -1) {
                         relativePath = String.join("/",
                             java.util.Arrays.copyOfRange(pathSegments, folderIndex, pathSegments.length));
@@ -119,9 +121,8 @@ public class ClientAppInterface {
                         // fallback: show last 3 segments
                         int start = Math.max(0, pathSegments.length - 3);
                         relativePath = String.join("/",
-                            java.util.Arrays.copyOfRange(pathSegments, start, pathSegments.length));
+                        java.util.Arrays.copyOfRange(pathSegments, start, pathSegments.length));
                     }
-
                     System.out.println("* client " + clientID + ":" + relativePath + ":" + pair.wordFrequency);
 				}
                 continue;
